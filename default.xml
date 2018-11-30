@@ -7,9 +7,9 @@
   <remote fetch="https://github.com" name="github"/>
   <remote fetch="https://code.qt.io" name="qt"/>
 
-  <project remote="yocto" revision="sumo" name="poky" path="sources/poky"/>
-  <project remote="yocto" revision="sumo" name="meta-raspberrypi" path="sources/meta-raspberrypi"/>
-  <project remote="oe" revision="sumo" name="meta-openembedded" path="sources/meta-openembedded"/>
+  <project remote="yocto" revision="thud" name="poky" path="sources/poky"/>
+  <project remote="yocto" revision="thud" name="meta-raspberrypi" path="sources/meta-raspberrypi"/>
+  <project remote="oe" revision="thud" name="meta-openembedded" path="sources/meta-openembedded"/>
   <project remote="qt" revision="5.12" name="yocto/meta-qt5" path="sources/meta-qt5"/>
   <project remote="github" revision="master" name="QtiPi/meta-qtipi" path="sources/meta-qtipi"/>  
 </manifest>
