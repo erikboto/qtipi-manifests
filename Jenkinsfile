@@ -1,5 +1,8 @@
-node('docker') {
-    agent { dockerfile true }
+pipeline {
+    agent {
+        label: 'docker'
+        dockerfile true 
+    }
     stages {
         stage('Test') {
             steps {
