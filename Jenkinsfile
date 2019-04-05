@@ -1,10 +1,8 @@
 pipeline {
     agent {
-        node {
-            label 'docker'
-        }
         dockerfile {
             filename 'Dockerfile'
+            label 'docker'
         }
     }
     stages {
