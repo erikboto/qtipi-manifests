@@ -1,4 +1,5 @@
 #!/bin/bash
 
+pwd
 time repo init -u . -b ci-work
 time repo sync -j20
