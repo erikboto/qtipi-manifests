@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'ls'
+                sh './ci-scripts/repo_init'
             }
         }
     }
