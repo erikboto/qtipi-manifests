@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pwd
+export HOME=`pwd`
 time repo init -u . -b ci-work
 time repo sync -j20
 
