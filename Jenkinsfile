@@ -3,6 +3,7 @@ pipeline {
         dockerfile {
             filename 'Dockerfile'
             label 'docker'
+            args '--entrypoint=\'\''
         }
     }
     stages {
