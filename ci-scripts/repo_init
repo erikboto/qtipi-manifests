@@ -1,8 +1,9 @@
 #!/bin/bash
 
 export HOME=`pwd`
+
+git branch -D master
+git checkout -b master
+
 time repo init -u . -b master
 time repo sync -j20
-
-touch ../foo
-touch ./foobar
