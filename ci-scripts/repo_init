@@ -3,3 +3,6 @@
 pwd
 time repo init -u . -b ci-work
 time repo sync -j20
+
+touch ../foo
+touch ./foobar
