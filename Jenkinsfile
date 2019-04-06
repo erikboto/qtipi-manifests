@@ -9,6 +9,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
+                sh 'pwd'
                 sh './ci-scripts/repo_init'
             }
         }
