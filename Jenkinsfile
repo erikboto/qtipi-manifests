@@ -9,6 +9,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                cleanWs()
                 sh 'pwd'
                 sh './ci-scripts/repo_init'
             }
