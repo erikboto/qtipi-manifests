@@ -7,15 +7,8 @@ pipeline {
         }
     }
     stages {
-        stage('Setup') {
-            steps {
-                step([$class: 'WsCleanup'])
-                checkout scm
-            }
-        }
         stage('Build') {
             steps {
-                sh 'pwd'
                 sh './ci-scripts/repo_init'
             }
         }
@@ -23,6 +16,12 @@ pipeline {
             steps {
                 archiveArtifacts artifacts: 'build/tmp/deploy/images/raspberrypi3/*.rpi-sdimg'
             }
+        }
+    }
+
+    post {
+        always {
+            deleteDir()
         }
     }
 }
