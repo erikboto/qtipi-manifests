@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Archive') {
             steps {
-                archiveArtifacts artifacts: 'build/tmp/deploy/images/*/*'
+                archiveArtifacts artifacts: 'build/tmp/deploy/*/*/*'
             }
         }
     }
