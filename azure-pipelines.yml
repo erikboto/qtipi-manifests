@@ -9,23 +9,29 @@ trigger:
 pool:
   name: 'CustomAgentPool'
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+stages:
+- stage: Build
+  jobs:
+    - job: Build
+      timeoutInMinutes: 0
+      cancelTimeoutInMinutes: 2
+      steps:
+      - script: echo Hello, world!
+        displayName: 'Run a one-line script'
 
-- script: |
-    echo Syncing repo
-    git checkout -b tmp
-    repo init -u . -m default.xml -b tmp
-    repo sync -j5
-  displayName: 'Get sources using repo tool'
+      - script: |
+          echo Syncing repo
+          git checkout -b tmp
+          repo init -u . -m default.xml -b tmp
+          repo sync -j5
+        displayName: 'Get sources using repo tool'
 
-- script: |
-    echo Building docker image.
-    docker build -f docker/Dockerfile -t qtipi-docker .
-  displayName: 'Build the docker image'
+      - script: |
+          echo Building docker image.
+          docker build -f docker/Dockerfile -t qtipi-docker .
+        displayName: 'Build the docker image'
 
-- script: |
-    echo Building image
-    docker run --rm -v ${PWD}:${PWD} qtipi-docker --workdir ${PWD} ./build.sh
-  displayName: 'Build the Yocto image'
+      - script: |
+          echo Building image
+          docker run --rm -v ${PWD}:${PWD} qtipi-docker --workdir ${PWD} ./build.sh
+        displayName: 'Build the Yocto image'
