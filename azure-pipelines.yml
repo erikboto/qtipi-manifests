@@ -14,6 +14,12 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: |
+    echo Syncing repo
+    repo init -u . -m default.xml
+    repo sync -j5
+  displayName: 'Get sources using repo tool'
+
+- script: |
     echo Building docker image.
     docker build -f docker/Dockerfile -t qtipi-docker .
   displayName: 'Build the docker image'
