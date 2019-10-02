@@ -15,7 +15,8 @@ steps:
 
 - script: |
     echo Syncing repo
-    repo init -u . -m default.xml
+    git checkout -b tmp
+    repo init -u . -m default.xml -b tmp
     repo sync -j5
   displayName: 'Get sources using repo tool'
 
