@@ -24,3 +24,8 @@ steps:
     echo Building docker image.
     docker build -f docker/Dockerfile -t qtipi-docker .
   displayName: 'Build the docker image'
+
+- script: |
+    echo Building image
+    docker run --rm -it -v ${PWD}:${PWD} qtipi-docker --workdir ${PWD} ./build.sh
+  displayName: 'Build the docker image'
