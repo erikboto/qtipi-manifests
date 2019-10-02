@@ -27,5 +27,5 @@ steps:
 
 - script: |
     echo Building image
-    docker run --rm -it -v ${PWD}:${PWD} qtipi-docker --workdir ${PWD} ./build.sh
-  displayName: 'Build the docker image'
+    docker run --rm -v ${PWD}:${PWD} qtipi-docker --workdir ${PWD} ./build.sh
+  displayName: 'Build the Yocto image'
