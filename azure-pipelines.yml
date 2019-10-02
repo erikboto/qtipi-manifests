@@ -15,5 +15,5 @@ steps:
 
 - script: |
     echo Building docker image.
-    docker build -f docker/Dockerfile -t qtipi-docker
+    docker build -f docker/Dockerfile -t qtipi-docker .
   displayName: 'Build the docker image'
